@@ -24,17 +24,17 @@ include '../connect.php';
         </div>
         <div class="col-3"><b>257,010</b></div>
         <div class="col-4">
-            <button type="submit" class="btn btn-sm light btn-primary" name="submit">Deposit Balance</button>
+            <button type="submit" onclick="openDepositBlanceModal()" class="btn btn-sm light btn-primary" name="submit">Deposit Balance</button>
         </div>
 
         <div class="col-5">
-            Today Total Debit:
+            Today's Total Debit:
         </div>
         <div class="col-3">33,850</div>
         <div class="col-4"></div>
 
         <div class="col-5">
-            Today Closing Balance:
+            Today's Closing Balance:
         </div>
         <div class="col-3"><b>223,160</b></div>
         <div class="col-4">
@@ -42,11 +42,11 @@ include '../connect.php';
     </div>
     <div class="row px-5 mt-2">
         <div class="col-6">
-            <button type="submit" class="btn btn-sm light btn-primary" name="addNewCost">Add Expense</button>
+            <button type="submit" onclick="openAddExpanceModal()" class="btn btn-sm light btn-primary" name="addNewCost">Add Expense</button>
         </div>
         <div class="col-6 d-flex justify-content-end">
             <p class="mx-3">Date: 02/03/2024 Fri</p>
-            <button type="submit" class="btn btn-sm light btn-primary" name="confirmTodaysExpanse">Confirm Expenses</button>
+            <button type="submit" class="btn btn-sm light btn-primary" onclick="openclosingTodaysExpanseModal()" name="confirmTodaysExpanse">Confirm Expenses</button>
 
         </div>
 
@@ -143,15 +143,150 @@ include '../connect.php';
                     </tr>';
 
                 ?>
-
-
-
-
             </tbody>
         </table>
     </div>
 
 </div>
+
+<!-- START Modal for Add Amount into Main Balance -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Diposit Balance</h5>
+        <button type="button" onclick="closeDepositBlanceModal()" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-4 mb-3">Amount for Diposit</div>
+            <div class="col-8 mb-3">
+                <input type="number" min="0.00" class="form-control" placeholder="0.00" />
+            </div>
+            <div class="col-4">Remark</div>
+            <div class="col-8">
+                <input type="text" min="0.00" class="form-control" placeholder="Notes" />
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-secondary" onclick="closeDepositBlanceModal()" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-sm btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Modal for Add Amount into Main Balance -->
+
+<!-- START Modal for Add Daily Expanse -->
+<div class="modal fade" id="addExpanceModalId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Expance</h5>
+        <button type="button" onclick="closeAddExpanceModal()" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-4 mb-3">Category</div>
+            <div class="col-8 mb-3">
+                <select name="fruit" id="fruit" class="form-control">
+                    <option value="apple">Hussain Sir</option>
+                    <option value="banana">Rajan</option>
+                    <option value="orange">Food+Egg Coconut+Entertentment</option>
+                    <option value="orange">	CAR</option>
+                </select>
+            </div>
+            <div class="col-4 mb-3">Description</div>
+            <div class="col-8 mb-3">
+                <select name="fruit" id="fruit" class="form-control">
+                    <option value="apple">Sub Category Discription 1</option>
+                    <option value="banana">Sub Category Discription 2</option>
+                    <option value="orange">Sub Category Discription 3</option>
+                    <option value="orange">Sub Category Discription 4</option>
+                </select>
+                <button type="button" class="btn btn-sm btn-primary">New</button>
+            </div>
+            <div class="col-4 mb-3">Amount</div>
+            <div class="col-8 mb-3">
+            <input type="number" min="0.00" class="form-control" placeholder="0.00" />
+            </div>
+            <div class="col-4">Remark</div>
+            <div class="col-8">
+                <input type="text" min="0.00" class="form-control" placeholder="Notes" />
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-secondary" onclick="closeAddExpanceModal()" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-sm btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- END Modal for Add Daily Expanse -->
+
+<!-- START Modal for Closing Days -->
+<div class="modal fade" id="closingTodaysExpanseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Close Todays Expanse</h5>
+        <button type="button" onclick="closeclosingTodaysExpanseModal()" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <h5 class="text-center text-danger">Do you want to Close Todays Expanse?</h5>
+            </div>
+            <div class="col-4">Remark</div>
+            <div class="col-8">
+                <input type="text" min="0.00" class="form-control" placeholder="Notes" />
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-secondary" onclick="closeclosingTodaysExpanseModal()" data-dismiss="modal">NO</button>
+        <button type="button" class="btn btn-sm btn-primary">YES</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Modal for Closing Days -->
+
+<script>
+    function openDepositBlanceModal()
+    {
+        $("#exampleModal").modal("show");
+    }
+    function closeDepositBlanceModal()
+    {
+        $("#exampleModal").modal("hide");
+    }
+    function openAddExpanceModal()
+    {
+        $("#addExpanceModalId").modal("show");
+    }
+    function closeAddExpanceModal()
+    {
+        $("#addExpanceModalId").modal("hide");
+    }
+    function openclosingTodaysExpanseModal()
+    {
+        $("#closingTodaysExpanseModal").modal("show");
+    }
+    function closeclosingTodaysExpanseModal()
+    {
+        $("#closingTodaysExpanseModal").modal("hide");
+    }
+</script>
 
 
 <?php include '../footer.php' ?>
