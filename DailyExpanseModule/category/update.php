@@ -1,5 +1,5 @@
 <?php 
-   include '../connect.php'; 
+   include '../../connect.php'; 
 
    $catId = $_GET['updateId'];
    $sql = "SELECT * from category where catId = $catId";
@@ -29,8 +29,8 @@
 ?>
 
 
-<?php include '../header.php' ?>
-<?php  include '../menu.php' ?>
+<?php include '../../header.php' ?>
+<?php  include '../../menu.php' ?>
 
     <div class="container mt-3 mainContainer">
         <form method="post">
@@ -47,4 +47,4 @@
     </div>
 
    
-    <?php include '../footer.php' ?>
+    <?php include '../../footer.php' ?>

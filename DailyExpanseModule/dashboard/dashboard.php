@@ -1,10 +1,10 @@
 <?php
-include '../connect.php';
+include '../../connect.php';
 
 ?>
 
-<?php include '../header.php' ?>
-<?php include '../menu.php' ?>
+<?php include '../../header.php' ?>
+<?php include '../../menu.php' ?>
 
 <style>
     .table td {
@@ -105,8 +105,8 @@ include '../connect.php';
                                     <td scope="col">1000</td>
                                     <td scope="col">' . (($ii == $i) ? $sum : '') . '</td>
                                     <td scope="col">
-                                        <button class="btn btn-sm btn-primary"><a href="' . $base_url . '/dashboard/update.php?updateId=' . $row['catId'] . '" class="text-light" >Update</a></button>
-                                        <button class="btn btn-sm btn-danger"><a href="' . $base_url . '/dashboard/delete.php?deleteId=' . $row['catId'] . '" class="text-light">Delete</a></button>
+                                    <button class="btn btn-sm btn-primary"><a href="' . $base_url . '/DailyExpanseModule/dashboard/update.php?updateId=' . $row['catId'] . '" class="text-light" >Update</a></button>
+                                    <button class="btn btn-sm btn-danger"><a href="' . $base_url . '/DailyExpanseModule/dashboard/delete.php?deleteId=' . $row['catId'] . '" class="text-light">Delete</a></button>
                                     </td>
                                 </tr>';
                                 $ii++;
@@ -289,4 +289,4 @@ include '../connect.php';
 </script>
 
 
-<?php include '../footer.php' ?>
+<?php include '../../footer.php' ?>

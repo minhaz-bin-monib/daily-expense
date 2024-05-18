@@ -1,5 +1,5 @@
 <?php 
-   include '../connect.php'; 
+   include '../../connect.php'; 
    if(isset($_POST['submit']))
    {
      $name = $_POST['name'];
@@ -22,8 +22,8 @@
 ?>
 
 
-<?php include '../header.php' ?>
-<?php  include '../menu.php' ?>
+<?php include '../../header.php' ?>
+<?php  include '../../menu.php' ?>
 
 
     <div class="container mt-3 mainContainer">
@@ -41,4 +41,4 @@
     </div>
 
    
-   <?php include '../footer.php' ?>
+   <?php include '../../footer.php' ?>

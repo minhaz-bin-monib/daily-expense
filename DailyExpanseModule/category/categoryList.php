@@ -1,15 +1,15 @@
 <?php
-include '../connect.php';
+include '../../connect.php';
 
 ?>
 
 
-<?php include '../header.php' ?>
-<?php  include '../menu.php' ?>
+<?php include '../../header.php' ?>
+<?php  include '../../menu.php' ?>
 
     <div class="container mt-3 mainContainer">
         <button class="btn btn-primary">
-            <a class="text-light" href="<?php echo $base_url?>/category/category.php"> Add Category</a>
+            <a class="text-light" href="<?php echo $base_url?>/DailyExpanseModule/category/category.php"> Add Category</a>
         </button>
 
 
@@ -32,8 +32,8 @@ include '../connect.php';
                                 <td>' . $row['name'] . '</td>
                                 <td>' . $row['description'] . '</td>
                                 <td> 
-                                <button class="btn btn-sm btn-primary"><a href="'.$base_url.'/category/update.php?updateId='.$row['catId'].'" class="text-light" >Update</a></button>
-                                <button class="btn btn-sm btn-danger"><a href="'.$base_url.'/category/delete.php?deleteId='.$row['catId'].'" class="text-light">Delete</a></button>
+                                <button class="btn btn-sm btn-primary"><a href="'.$base_url.'/DailyExpanseModule/category/update.php?updateId='.$row['catId'].'" class="text-light" >Update</a></button>
+                                <button class="btn btn-sm btn-danger"><a href="'.$base_url.'/DailyExpanseModule/category/delete.php?deleteId='.$row['catId'].'" class="text-light">Delete</a></button>
                                 </td>
                             </tr>';
                     }
@@ -49,4 +49,4 @@ include '../connect.php';
         </table>
     </div>
 
-    <?php include '../footer.php' ?>
+    <?php include '../../footer.php' ?>

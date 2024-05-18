@@ -7,13 +7,13 @@ $base_url = $protocol . "://" . $_SERVER['HTTP_HOST'].'/daily-expense';
     <div class="sidebar-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo $base_url ?>/dashboard/dashboard.php">Expense Dashborard</a>
+          <a class="nav-link" href="<?php echo $base_url ?>/DailyExpanseModule/dashboard/dashboard.php">Expense Dashborard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo $base_url ?>#">All Expense List</a>
+          <a class="nav-link" href="<?php echo $base_url ?>/DailyExpanseModule/costlist/allCostList.php">All Expense List</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo $base_url ?>/category/categoryList.php">Category List</a>
+          <a class="nav-link" href="<?php echo $base_url ?>/DailyExpanseModule/category/categoryList.php">Category List</a>
         </li>
       </ul>
     </div>

@@ -1,6 +1,6 @@
 
-<?php include 'header.php' ?>
-<?php  include 'menu.php' ?>
+<?php include './header.php' ?>
+<?php  include './menu.php' ?>
 
 
     <div class="container mt-3 mainContainer">
@@ -8,4 +8,4 @@
     </div>
 
    
-   <?php include 'footer.php' ?>
+    <?php include './footer.php' ?>
