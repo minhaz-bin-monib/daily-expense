@@ -1,7 +1,7 @@
 
 <?php 
 $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
-$base_url = $protocol . "://" . $_SERVER['HTTP_HOST'].'/dailyexpanse';
+$base_url = $protocol . "://" . $_SERVER['HTTP_HOST'].'/daily-expense';
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,8 @@ $base_url = $protocol . "://" . $_SERVER['HTTP_HOST'].'/dailyexpanse';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Left Side Menu</title>
-  <base href="http://localhost" />
+  <!-- <base href="http://localhost" /> -->
+  <base href="https://accounts.all-marchbd.com" />
 
   <link rel="stylesheet" href="<?php echo $base_url?>/static/css/bootstrap.min.css" >
   <link rel="stylesheet" href="<?php echo $base_url?>/static/css/style.css" >
